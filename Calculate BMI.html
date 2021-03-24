@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate BMI</title>
+  <link rel="stylesheet" href="/css/Calculate BMI.css">
+</head>
+
+<body>
+  <div class="swap">
+    <header>
+      <a class="home-btn" href="/index.html">首頁</a>
+    </header>
+
+    <main>
+      <input type="button" value="計算你的 BMI">
+
+      <section class="calculate">
+        <div class="input-group">
+          <label for="height">請輸入您的身高</label><br>
+          <input id="height" type="text" placeholder="身高">
+          <span class="half-circle">公分</span>
+        </div>
+        <div class="input-group">
+          <label for="weight">請輸入您的體重</label><br>
+          <input id="weight" type="text" placeholder="體重">
+          <span class="half-circle">公斤</span>
+        </div>
+        <input type="button" class="calculate-btn" value="開始計算">
+        <input type="button" class="remove-all-btn" value="清除全部">
+      </section>
+      <p class="error-message"></p>
+
+      <ul class="calculate-history">
+        <li class="empty-history">不要害怕面對現實</li>
+      </ul>
+
+      <section class="last-time display-none">
+        <p></p>
+      </section>
+    </main>
+
+    <footer>
+      <h3>計算標準</h3>
+      <div>
+        <h4>體重過輕</h4>
+        <h3>BMI < 18.5</h3>
+      </div>
+      <div>
+        <h4>健康</h4>
+        <h3>18.5 <= BMI < 24</h3>
+      </div>
+      <div>
+        <h4>體重過重</h4>
+        <h3>24 <=BMI < 27</h3>
+      </div>
+      <div>
+        <h4>輕度肥胖</h4>
+        <h3>27 <= BMI < 30</h3>
+      </div>
+      <div>
+        <h4>中度肥胖</h4>
+        <h3>30 <= BMI < 35</h3>
+      </div>
+      <div>
+        <h4>重度肥胖</h4>
+        <h3>BMI >= 35</h3>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/js/Calculate BMI.js"></script>
+</body>
+
+</html>
