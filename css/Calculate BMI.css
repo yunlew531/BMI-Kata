@@ -95,6 +95,7 @@ main > input{
   padding: 6px 24px;
   border-radius: 22px;
   border: 0;
+  box-shadow: 3px 3px 10px gray;
 }
 
 main .calculate{
@@ -174,6 +175,16 @@ main .bmi-list{
   margin: 10px;
   border-radius: 10px;
   box-shadow: 3px 3px 10px gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .bmi-list h4{
+  flex-grow: 1;
+}
+
+main .bmi-list span{
+  color: var(--color);
 }
 
 main .last-time{
@@ -187,7 +198,7 @@ footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 24px;
+  margin: 24px 0;
   padding: 0 205px;
 }
 
@@ -198,7 +209,8 @@ footer h4{
 }
 
 .error-message{
-  margin-top: 10px;
+  height: 16px;
+  margin-top: 16px;
   color: rgb(255, 0, 76);
 }
 

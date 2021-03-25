@@ -52,7 +52,9 @@ function calculateBmi(e) {
     else if (bmi < 30) state = 'mildFat';
     else if (bmi < 35) state = 'moderateFat';
     else if (bmi >= 35) state = 'severeFat';
+    const timestamp = getTime();
     const obj = {
+      timestamp,
       bmi,
       state
     }
@@ -63,11 +65,22 @@ function calculateBmi(e) {
   }
 }
 
+function getTime() {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = (date.getHours() < 10 ? '0' : '') + date.getHours();
+  const min = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+  const sec = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
+  return `${year}/${month}/${day} ${hour}:${min}:${sec}`;
+}
+
 function renderBmiList() {
   const lastOne = bmiHistoryData[bmiHistoryData.length-1];
   let str = '';
   bmiHistoryData.forEach(item => {
-    const content = `<li class="bmi-list ${bmiStatesData[item.state].color}-text">您的體重${bmiStatesData[item.state].state}，健康指數為${bmiStatesData[item.state].colorTxt}</li>`;
+    const content = `<li class="bmi-list ${bmiStatesData[item.state].color}-text"><h4>您的體重${bmiStatesData[item.state].state}，健康指數為${bmiStatesData[item.state].colorTxt}</h4><span>${item.timestamp}</span></li>`;
     str += content;
   })
   if (bmiHistoryData.length) {
