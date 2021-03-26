@@ -1,0 +1,258 @@
+$color-gray: #979797;
+
+.Ranking-swap{
+  .display-none{
+    display: none;
+  }
+  width: 1280px;
+  margin: 0 auto;
+  h2{
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 38px;
+  }
+  h5{
+    font-size: 14px;
+    color: $color-gray;
+  }
+  .team-rank{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 42px;
+    .card{
+      width: 532px;
+      background: #FFFFFF;
+      padding: 24px 0;
+      border-radius: 16px;
+      margin-bottom: 48px;
+      position: relative;
+      .card-header{
+        padding: 0 24px;
+        
+      }
+      .card-content{
+        border-top: solid #E2E2E2 1px;
+        border-bottom: solid #E2E2E2 1px;
+        padding: 16px 24px;
+        margin: 16px 0;
+        li{
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 12px;
+          background: #F2F2F2;
+          border-radius: 8px;
+          margin: 6px 0;
+          :first-child{
+            text-decoration: underline;
+          }
+        }
+      }
+      img{
+        position: absolute;
+        right: -20px;
+        top: -25px;
+      }
+      .people-time{
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+        margin-top: 16px;
+        h5{
+          margin-bottom: 6px;
+        }
+      }
+    }
+    .rank-img-0, .rank-img-1, .rank-img-2{
+      position: absolute;
+      top: -25px;
+      right: -25px;
+      width: 86px;
+      height: 100px;
+    }
+
+    .rank-img-0{ 
+      background: url('/image/first.png') no-repeat center;
+    }
+
+    .rank-img-1{
+      background: url('/image/second.png') no-repeat center;
+    }
+
+    .rank-img-2{
+      background: url('/image/third.png') no-repeat center;
+    }
+
+    .actively-team{
+      width: 640px;
+      background: #ADE653;
+      padding: 72px 48px 48px 60px;
+      h2{
+        color: #387C57;
+      }
+      border-radius: 0px 32px 0px 0px;
+    }
+    
+    .fastly-team{
+      width: 640px;
+      background: #35BF79;
+      padding: 72px 60px 48px 48px;
+      h2{
+        color: #555555;
+      }
+      border-radius: 0px 0px 0px 32px;
+      margin-top: 64px;
+    }
+  }
+
+  .personal-rank{
+    margin-top: 72px;
+    padding: 0 50px;
+    h2{
+      color: #555555;
+      font-size: 36px;
+    }
+    h5{
+      margin-right: 12px;
+    }
+    button{
+      color: #1D1D1D;
+      padding: 11px 20px;
+      border-radius: 30px;
+      border: 1px solid #E2E2E2;
+      margin: 0 6px;
+      background: #FFFFFF;
+      font-size: 16px;
+    }
+    button:hover{
+      transform: scale(1.1);
+    }
+
+    .search{
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      padding: 17px;
+      margin-bottom: 36px;
+      border-radius: 12px;
+      .btn-group{
+        position: relative;
+        margin-left: auto;
+        button{
+          background: #387C57;
+          position: absolute;
+          color: #FFFFFF;
+          right: 0;
+        }
+        button:hover{
+          transform: scale(1.02);
+        }
+        input{
+          width: 356px;
+          padding: 12px 0 12px 44px;
+          font-size: 16px;
+          border-radius: 22px;
+          border: 1px solid #E2E2E2;
+          margin-right: 10px;
+        }
+        i{
+          position: absolute;
+          left: 17px;
+          top: 12px;
+          color: #387C57;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .search-content{
+      h4{
+        color: #979797;
+        margin-left: 15px;
+      }
+      .card-render{
+        margin-top: 12px;
+      }
+      .personal-rank-card{
+        background: #FFFFFF;
+        border-radius: 16px;
+        box-shadow: 0px 1px 2px #00000029;
+        padding: 24px 0;
+        margin: 12px 0;
+        .header{
+          padding: 0 24px;
+          :first-child{
+            background: #FFCD03;
+            color: #1D1D1D;
+            margin-left: 0;
+          }
+          :nth-child(2){
+            background: #35BF79;
+            color: #FFFFFF;
+          }
+          :nth-child(3){
+            background: #F2F2F2;
+            color: #1D1D1D;
+          }
+          span{
+            padding: 8px 11px;
+            border-radius: 23px;
+            margin: 0 6px;
+            font-size: 14px;
+          }
+          h3{
+            margin: 20px 0 8px;
+            font-size: 18px;
+          }
+          h5{
+          }
+        }
+
+        .content{
+          padding: 16px 24px;
+          border-top: #E2E2E2 1px solid;
+          border-bottom: #E2E2E2 1px solid;
+          margin: 16px 0;
+          h5{
+            font-size: 14px;
+            color: $color-gray;
+          }
+          p{
+            margin-top: 10px;
+            color: #555555;
+          }
+        }
+        .footer{
+          display: flex;
+          align-items: center;
+          padding: 8px 24px;
+          a{
+            padding: 8px 11px;
+            border-radius: 23px;
+            margin: 0 6px;
+            font-size: 14px;
+            background: #FFFFFF;
+            border: 1px solid #E2E2E2;
+            color: #1D1D1D;
+          }
+          a:hover{
+            background: #eeeeee;            
+          }
+          span{
+            margin-left: auto;
+            color: #979797;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  footer{
+    margin: 97px 0 4px;
+    text-align: center;
+    color: #979797;
+    font-size: 14px;
+    padding: 16px 0;
+    background: #FFFFFF;
+  }
+}
+
