@@ -25,8 +25,8 @@ function addGroupAverageTime(teamArr) {
       second = parseInt(second.practiceSecond);
       return prev + second;
     }, 0);
-    const TimeInSec = totalMin * 60 + totalSec;
-    const averageTotalSec = (TimeInSec / item.members.length);
+    const timeInSec = totalMin * 60 + totalSec;
+    const averageTotalSec = (timeInSec / item.members.length);
     const averageMin = Math.floor(averageTotalSec / 60);
     const averageSec = (Math.round(averageTotalSec % 60) < 10 ? '0' : '') + (Math.round(averageTotalSec % 60));
     item.averageTime = `${averageMin}分${averageSec}秒`;
@@ -106,25 +106,25 @@ function rankMemberInGroup(arr) {
 // 渲染個人排名
 function renderPersonalCard(e) {
   const cardRender = document.querySelector('.search-content .card-render');
-  let PersonalRank = data.sort((a, b) => {
+  let personalRank = data.sort((a, b) => {
     a = a.practiceMinute * 60 + a.practiceSecond * 1;
     b = b.practiceMinute * 60 + b.practiceSecond * 1;
     return a - b;
   })
   
   if (!e) {
-    PersonalRank = PersonalRank;
+    personalRank = personalRank;
   } else if (e.target.value === '低於10分鐘') {
-    PersonalRank = PersonalRank.filter(item => item.practiceMinute < 10);
+    personalRank = personalRank.filter(item => item.practiceMinute < 10);
   } else if (e.target.value === '有留言') {
-    PersonalRank = PersonalRank.filter(item => item.message);
+    personalRank = personalRank.filter(item => item.message);
   } else if (e.target.value === '有影片') {
-    PersonalRank = PersonalRank.filter(item => item.youtubeUrl);
+    personalRank = personalRank.filter(item => item.youtubeUrl);
   } else if (e.target.value === '搜尋' || e.keyCode === 13) {;
-    PersonalRank = PersonalRank.filter(item => item.slackName.match(searchText.value));
+    personalRank = personalRank.filter(item => item.slackName.match(searchText.value));
   }
   let str = '';
-  PersonalRank.forEach((item, key) => {
+  personalRank.forEach((item, key) => {
     const isUnder10 = (item.practiceMinute >= 10 ? 'class="display-none"' : '')
     const content = `
       <li class="personal-rank-card">
