@@ -31,14 +31,12 @@ function addGroupAverageTime(teamArr) {
     const averageSec = (Math.round(averageTotalSec % 60) < 10 ? '0' : '') + (Math.round(averageTotalSec % 60));
     item.averageTime = `${averageMin}分${averageSec}秒`;
     item.averageTotalSec = averageTotalSec;
-  })
-    ;
+  });
 }
 
 // 按繳交人數最多的組別排序
 function getActiveTeam(teamArr) {
   return teamArr.sort((a, b) => b.members.length - a.members.length);
-
 }
 
 // 按平均時間快的組別排序
@@ -102,9 +100,7 @@ function rankMemberInGroup(arr) {
 // 渲染個人排名
 function renderPersonalCard(e) {
   const cardRender = document.querySelector('.search-content .card-render');
-
   let personalRank = rankMemberInGroup(data);  // data按秒數排序
-
   if (!e) {
     personalRank = personalRank;
   } else if (e.target.value === '低於10分鐘') {
