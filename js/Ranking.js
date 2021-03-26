@@ -54,7 +54,7 @@ function renderTeamCard(cardArr, Dom) {
     let strGroupRank = ''
 
     // 組內排名
-    const groupRankSortArr = rankMemberInGroup(item);
+    const groupRankSortArr = rankMemberInGroup(item.members);
 
     groupRankSortArr.forEach(groupMember => {
       const content = `
@@ -95,7 +95,7 @@ function renderTeamCard(cardArr, Dom) {
 
 // 組內排名
 function rankMemberInGroup(arr) {
-  const groupRankSortArr = arr.members.sort((a, b) => {
+  const groupRankSortArr = arr.sort((a, b) => {
     a = a.practiceMinute * 60 + a.practiceSecond * 1;
     b = b.practiceMinute * 60 + b.practiceSecond * 1;
     return a - b;
@@ -106,12 +106,10 @@ function rankMemberInGroup(arr) {
 // 渲染個人排名
 function renderPersonalCard(e) {
   const cardRender = document.querySelector('.search-content .card-render');
-  let personalRank = data.sort((a, b) => {
-    a = a.practiceMinute * 60 + a.practiceSecond * 1;
-    b = b.practiceMinute * 60 + b.practiceSecond * 1;
-    return a - b;
-  })
-  
+
+  // data按秒數排序
+  let personalRank = rankMemberInGroup(data);
+
   if (!e) {
     personalRank = personalRank;
   } else if (e.target.value === '低於10分鐘') {
