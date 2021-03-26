@@ -52,10 +52,7 @@ function renderTeamCard(cardArr, Dom) {
   cardArr = cardArr.filter((item, key) => key < 3);
   cardArr.forEach((item, key) => {
     let strGroupRank = ''
-
-    // 組內排名
-    const groupRankSortArr = rankMemberInGroup(item.members);
-
+    const groupRankSortArr = rankMemberInGroup(item.members);   // 組內排名
     groupRankSortArr.forEach(groupMember => {
       const content = `
       <li>
@@ -65,7 +62,6 @@ function renderTeamCard(cardArr, Dom) {
       `;
       strGroupRank += content;
     })
-
     const content = `
       <li class="card">
         <div class="card-header">
@@ -107,8 +103,7 @@ function rankMemberInGroup(arr) {
 function renderPersonalCard(e) {
   const cardRender = document.querySelector('.search-content .card-render');
 
-  // data按秒數排序
-  let personalRank = rankMemberInGroup(data);
+  let personalRank = rankMemberInGroup(data);  // data按秒數排序
 
   if (!e) {
     personalRank = personalRank;
@@ -164,23 +159,16 @@ const api = 'https://raw.githubusercontent.com/hexschool/js-traninging-week6API/
 axios.get(api).then(res => {
   data = res.data;
 
-  // 整理資料成需要的格式
-  const teamArr = dataClassification();
-  // 增加組別平均時間
-  addGroupAverageTime(teamArr);
+  const teamArr = dataClassification();    // 整理資料成需要的格式
+  addGroupAverageTime(teamArr);    // 每個組別增加平均時間屬性
 
-  // 排序踴躍的組別
-  const activeTeamArr = getActiveTeam(teamArr);
-  // 渲染踴躍的組別
-  renderTeamCard(activeTeamArr, activelyTeam);
+  const activeTeamArr = getActiveTeam(teamArr);    // 排序踴躍的組別
+  renderTeamCard(activeTeamArr, activelyTeam);   // 渲染踴躍的組別
 
-  // 排序神速的組別
-  const fasterTeamArr = getFasterTeam(teamArr);
-  // 渲染神速的組別
-  renderTeamCard(fasterTeamArr, fasterTeam);
+  const fasterTeamArr = getFasterTeam(teamArr);    // 排序神速的組別
+  renderTeamCard(fasterTeamArr, fasterTeam);    // 渲染神速的組別
 
-  // 渲染個人排名
-  renderPersonalCard();
+  renderPersonalCard();    // 渲染個人排名
 })
 
 searchText.addEventListener('keyup', renderPersonalCard);
