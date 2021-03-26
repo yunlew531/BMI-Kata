@@ -138,8 +138,8 @@ function renderPersonalCard(e) {
           <p>${item.message || '沒有留言'}</p>
         </div>
         <div class="footer">
-          <a href="${item.codepenUrl}">Code</a>
-          <a href="${item.youtubeUrl}">Video</a>
+          <a href="${item.codepenUrl || 'javascript:void(0)'}">Code</a>
+          <a href="${item.youtubeUrl || 'javascript:void(0)'}">Video</a>
           <span>${item.timestamp}</span>
         </div>
       </li>
