@@ -183,7 +183,6 @@ axios.get(api).then(res => {
 
   // 渲染個人排名
   renderPersonalCard();
-  console.log(teamArr);
 })
 
 searchText.addEventListener('keyup', renderPersonalCard);
